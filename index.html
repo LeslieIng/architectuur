@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8">
@@ -17,9 +17,10 @@
         <div class="header-container">
             <h1 class="logo">ING <span>architectuur</span></h1>
             <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Work</a>
-                <a href="#contact">Contact</a>
+                <a href="#about" data-i18n="nav-about">Over</a>
+                <a href="#projects" data-i18n="nav-work">Werk</a>
+                <a href="#contact" data-i18n="nav-contact">Contact</a>
+                <button id="lang-toggle" class="lang-btn">EN</button>
             </nav>
         </div>
     </header>
@@ -27,14 +28,14 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h2>I am an architect</h2>
-                <p>Minimalist design. Functional spaces.</p>
+                <h2 data-i18n="hero-title">Ik ben een architect</h2>
+                <p data-i18n="hero-subtitle">Minimalistisch ontwerp. Functionele ruimtes.</p>
             </div>
         </section>
 
         <section id="projects" class="section">
             <div class="container">
-                <h3 class="section-title">Selected Projects</h3>
+                <h3 class="section-title" data-i18n="projects-title">Geselecteerde Projecten</h3>
                 <div class="projects-grid">
                     <!-- Project 1 -->
                     <div class="project-card">
@@ -43,7 +44,7 @@
                         </div>
                         <div class="project-info">
                             <h4>Residence V</h4>
-                            <p>Residential • 2025</p>
+                            <p><span data-i18n="proj-1-cat">Residentieel</span> • 2025</p>
                         </div>
                     </div>
                     <!-- Project 2 -->
@@ -53,7 +54,7 @@
                         </div>
                         <div class="project-info">
                             <h4>The Light House</h4>
-                            <p>Interior • 2024</p>
+                            <p><span data-i18n="proj-2-cat">Interieur</span> • 2024</p>
                         </div>
                     </div>
                     <!-- Project 3 -->
@@ -63,7 +64,7 @@
                         </div>
                         <div class="project-info">
                             <h4>Urban Gallery Concept</h4>
-                            <p>Concept • 2024</p>
+                            <p><span data-i18n="proj-3-cat">Concept</span> • 2024</p>
                         </div>
                     </div>
                     <!-- Project 4 -->
@@ -73,7 +74,7 @@
                         </div>
                         <div class="project-info">
                             <h4>Brutalist Pavilion</h4>
-                            <p>Public Space • 2023</p>
+                            <p><span data-i18n="proj-4-cat">Openbare Ruimte</span> • 2023</p>
                         </div>
                     </div>
                     <!-- Project 5 -->
@@ -83,7 +84,7 @@
                         </div>
                         <div class="project-info">
                             <h4>Glass Museum</h4>
-                            <p>Cultural • 2022</p>
+                            <p><span data-i18n="proj-5-cat">Cultureel</span> • 2022</p>
                         </div>
                     </div>
                     <!-- Project 6 -->
@@ -93,7 +94,7 @@
                         </div>
                         <div class="project-info">
                             <h4>Studio A</h4>
-                            <p>Renovation • 2021</p>
+                            <p><span data-i18n="proj-6-cat">Renovatie</span> • 2021</p>
                         </div>
                     </div>
                 </div>
@@ -102,18 +103,17 @@
 
         <section id="about" class="section bg-light">
             <div class="container about-container">
-                <h3 class="section-title">About</h3>
-                <p class="about-text">
-                    I am an architect. I believe in the power of simplicity, focusing on pure forms, natural light, and
-                    authentic materials to create spaces that inspire quiet confidence.
+                <h3 class="section-title" data-i18n="about-title">Over</h3>
+                <p class="about-text" data-i18n="about-text">
+                    Ik ben een architect. Ik geloof in de kracht van eenvoud, met de nadruk op pure vormen, natuurlijk licht en authentieke materialen om ruimtes te creëren die rustige zelfverzekerdheid uitstralen.
                 </p>
             </div>
         </section>
 
         <section id="contact" class="section">
             <div class="container contact-container">
-                <h3 class="section-title">Let's Talk</h3>
-                <p>Have a project in mind?</p>
+                <h3 class="section-title" data-i18n="contact-title">Laten we praten</h3>
+                <p data-i18n="contact-subtitle">Heeft u een project in gedachten?</p>
                 <a href="mailto:leslie@architectuur.ing" class="contact-link">leslie@architectuur.ing</a>
             </div>
         </section>
@@ -121,7 +121,7 @@
 
     <footer>
         <div class="container footer-container">
-            <p>&copy; 2026 ING architectuur. All rights reserved.</p>
+            <p>&copy; 2026 ING architectuur. <span data-i18n="footer-rights">Alle rechten voorbehouden.</span></p>
         </div>
     </footer>
 

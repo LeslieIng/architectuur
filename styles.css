@@ -123,6 +123,24 @@ nav a:hover::after {
     width: 100%;
 }
 
+.lang-btn {
+    background: none;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+    padding: 0.2rem 0.6rem;
+    margin-left: 2rem;
+    font-family: var(--font-stack);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border-radius: 2px;
+}
+
+.lang-btn:hover {
+    background: var(--text-primary);
+    color: var(--bg-color);
+}
+
 /* Hero Section */
 #hero {
     height: 80vh;
