@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Boerhaave | ING architectuur</title>
+    <meta name="description" content="Forum Boerhaave - Een iconisch en duurzaam forum in de Boerhaavewijk te Haarlem.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Project Page Specific Styles */
+        .project-hero {
+            height: 70vh;
+            background: url('projects/forum_boerhaave_assets/Lente.png') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 5rem;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+        }
+
+        .project-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-hero h2 {
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            margin: 4rem 0;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .meta-item span {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-item p {
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+
+        .project-description {
+            grid-column: span 8;
+        }
+
+        .project-description h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .project-description p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+            margin-bottom: 8rem;
+        }
+
+        .gallery-item {
+            grid-column: span 12;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-item.half {
+            grid-column: span 6;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition-smooth);
+        }
+
+        .gallery-item figcaption {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .back-nav {
+            padding: 4rem 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: var(--transition-smooth);
+        }
+
+        .back-btn:hover {
+            transform: translateX(-10px);
+        }
+
+        .back-btn svg {
+            margin-right: 1rem;
+        }
+
+        @media (max-width: 992px) {
+            .project-description {
+                grid-column: span 12;
+            }
+            .project-hero h2 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item.half {
+                grid-column: span 12;
+            }
+            .project-hero h2 {
+                font-size: 2.5rem;
+            }
+            .project-meta {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header">
+        <div class="header-container">
+            <h1 class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">ING <span>architectuur</span></a></h1>
+            <nav>
+                <a href="index.html#about" data-i18n="nav-about">Over</a>
+                <a href="index.html#projects" data-i18n="nav-work">Werk</a>
+                <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
+                <button id="lang-toggle" class="lang-btn">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-hero">
+            <div class="container">
+                <h2 data-i18n="p1-title">Forum Boerhaave</h2>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span data-i18n="p1-meta-loc-label">Locatie</span>
+                    <p data-i18n="p1-meta-loc">Haarlem, NL</p>
+                </div>
+                <div class="meta-item">
+                    <span data-i18n="p1-meta-cat-label">Categorie</span>
+                    <p data-i18n="p1-meta-cat">Huidige Architectuur / Forum</p>
+                </div>
+                <div class="meta-item">
+                    <span data-i18n="p1-meta-year-label">Jaar</span>
+                    <p>2023</p>
+                </div>
+                <div class="meta-item">
+                    <span data-i18n="p1-meta-status-label">Status</span>
+                    <p data-i18n="p1-meta-status">Graduatie Project</p>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <article class="project-description">
+                    <h3 data-i18n="p1-desc-title">Alles Onder Eén Dak</h3>
+                    <p data-i18n="p1-desc-1">
+                        Forum Boerhaave is een antwoord op de hedendaagse vraagstukken van de naoorlogse Boerhaavewijk in Haarlem. Het project streeft naar een iconisch en duurzaam forum dat klaar is voor de toekomst, als een kloppend hart voor de gemeenschap.
+                    </p>
+                    <p data-i18n="p1-desc-2">
+                        Het ontwerp is gesitueerd op het knooppunt van de wijk, waar de Floris van Adrichemlaan en de Professor Eijkmanlaan elkaar kruisen. Het gebouw verbindt de wijk met de achterliggende Poelpolder via een centraal atrium dat het volume doorsnijdt.
+                    </p>
+                    <p data-i18n="p1-desc-3">
+                        Duurzaamheid staat centraal door het gebruik van lokale materialen, zoals bagger uit de Spaarne en rietvezels uit de Poelpolder, verwerkt met innovatieve 3D-printtechnieken. De constructie is gebaseerd op 'Open Bouwen' principes, met een houten kolommenstructuur die maximale flexibiliteit biedt voor toekomstige aanpassingen.
+                    </p>
+                </article>
+            </div>
+
+            <section class="project-gallery">
+                <figure class="gallery-item">
+                    <img src="projects/forum_boerhaave_assets/Lente.png" alt="Waterplein & Westgevel Lente">
+                    <figcaption data-i18n="p1-cap-1">Waterplein & Westgevel - Lente</figcaption>
+                </figure>
+                
+                <figure class="gallery-item">
+                    <img src="projects/forum_boerhaave_assets/Stedenbouwkundige_context.png" alt="Stedenbouwkundige context">
+                    <figcaption data-i18n="p1-cap-2">Stedenbouwkundige Context</figcaption>
+                </figure>
+
+                <figure class="gallery-item half">
+                    <img src="projects/forum_boerhaave_assets/Atrium_Begane_Grond.png" alt="Atrium Begane Grond">
+                    <figcaption data-i18n="p1-cap-3">Centraal Atrium - Begane Grond</figcaption>
+                </figure>
+
+                <figure class="gallery-item half">
+                    <img src="projects/forum_boerhaave_assets/Vide.png" alt="Vide">
+                    <figcaption data-i18n="p1-cap-4">Interieur Vide</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="projects/forum_boerhaave_assets/Zomer_markt.png" alt="Marktplein & Westgevel Zomer">
+                    <figcaption data-i18n="p1-cap-5">Marktplein & Westgevel - Zomer</figcaption>
+                </figure>
+
+                <figure class="gallery-item half">
+                    <img src="projects/forum_boerhaave_assets/Doorsnede.png" alt="Doorsnede">
+                    <figcaption data-i18n="p1-cap-6">Architectonische Doorsnede</figcaption>
+                </figure>
+
+                <figure class="gallery-item half">
+                    <img src="projects/forum_boerhaave_assets/Draagstructuur.png" alt="Draagstructuur">
+                    <figcaption data-i18n="p1-cap-7">Draagstructuur & Open Bouwen</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="projects/forum_boerhaave_assets/Winter_schaatsbaan.png" alt="Schaatsplein & Westgevel Winter">
+                    <figcaption data-i18n="p1-cap-8">Schaatsplein & Westgevel - Winter</figcaption>
+                </figure>
+            </section>
+
+            <nav class="back-nav">
+                <a href="index.html#projects" class="back-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    <span data-i18n="p1-back">Terug naar Werk</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2026 ING architectuur. <span data-i18n="footer-rights">Alle rechten voorbehouden.</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

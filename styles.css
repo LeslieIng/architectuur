@@ -177,6 +177,9 @@ nav a:hover::after {
 
 .project-card {
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .image-wrapper {
