@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Header scroll effect
     const header = document.getElementById('main-header');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -78,7 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
             'p1-cap-6': 'Architectural Section',
             'p1-cap-7': 'Support Structure & Open Building',
             'p1-cap-8': 'Skating Rink & West Facade - Winter',
-            'p1-back': 'Back to Work'
+            'p1-back': 'Back to Work',
+            'p1-slider-1-title': 'Structure vs. Interior',
+            'p1-slider-before': 'Structure',
+            'p1-slider-after': 'Interior',
+            'p1-slider-2-title': 'Flexibility: Presentation vs. Sport',
+            'p1-slider-2-before': 'Presentation',
+            'p1-slider-2-after': 'Sport'
         },
         nl: {
             'nav-about': 'Over',
@@ -119,7 +125,13 @@ document.addEventListener('DOMContentLoaded', () => {
             'p1-cap-6': 'Architectonische Doorsnede',
             'p1-cap-7': 'Draagstructuur & Open Bouwen',
             'p1-cap-8': 'Schaatsplein & Westgevel - Winter',
-            'p1-back': 'Terug naar Werk'
+            'p1-back': 'Terug naar Werk',
+            'p1-slider-1-title': 'Draagstructuur vs. Inrichting',
+            'p1-slider-before': 'Structuur',
+            'p1-slider-after': 'Interieur',
+            'p1-slider-2-title': 'Flexibiliteit: Presentatie vs. Sport',
+            'p1-slider-2-before': 'Presentatie',
+            'p1-slider-2-after': 'Sport'
         }
     };
 
@@ -129,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentLang = currentLang === 'nl' ? 'en' : 'nl';
         document.documentElement.lang = currentLang;
         langBtn.textContent = currentLang === 'nl' ? 'EN' : 'NL';
-        
+
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[currentLang][key]) {
@@ -137,4 +149,56 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Image Comparison Slider Logic
+    function initComparisons() {
+        const sliders = document.querySelectorAll('.comparison-slider');
+
+        sliders.forEach(slider => {
+            const overlay = slider.querySelector('.img-overlay');
+            const inner = slider.querySelector('.img-overlay-inner');
+            const handle = slider.querySelector('.slider-handle');
+            let clicked = false;
+
+            function setFixedInnerWidth() {
+                if (inner) {
+                    inner.style.width = slider.offsetWidth + "px";
+                }
+            }
+            
+            setFixedInnerWidth();
+            window.addEventListener('resize', setFixedInnerWidth);
+
+            function slide(x) {
+                let pos = x - slider.getBoundingClientRect().left;
+                if (pos < 0) pos = 0;
+                if (pos > slider.offsetWidth) pos = slider.offsetWidth;
+
+                const percentage = (pos / slider.offsetWidth) * 100;
+                overlay.style.width = percentage + "%";
+                handle.style.left = percentage + "%";
+            }
+
+            function onMove(e) {
+                if (!clicked) return;
+                const x = e.type.includes('touch') ? e.touches[0].pageX : e.pageX;
+                slide(x);
+            }
+
+            handle.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                clicked = true;
+            });
+            window.addEventListener('mouseup', () => clicked = false);
+            window.addEventListener('mousemove', onMove);
+
+            handle.addEventListener('touchstart', (e) => {
+                clicked = true;
+            });
+            window.addEventListener('touchend', () => clicked = false);
+            window.addEventListener('touchmove', onMove);
+        });
+    }
+
+    initComparisons();
 });

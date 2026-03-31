@@ -167,6 +167,104 @@
                 gap: 2rem;
             }
         }
+
+        /* Image Comparison Slider */
+        .comparison-slider {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            margin-bottom: 4rem;
+        }
+
+        .comparison-slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .comparison-slider .img-overlay {
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .comparison-slider .img-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+
+        /* Essential for keeping images aligned: the nested image inside the overlay must not be scaled relative to the handle position */
+        .comparison-slider .img-overlay-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        /* Using a fixed width based on the JS to ensure the inner image is always the full width of the slider container */
+        .comparison-slider .img-overlay-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background: white;
+            z-index: 3;
+            cursor: ew-resize;
+            transform: translateX(-50%);
+        }
+
+        .slider-handle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 32px;
+            height: 32px;
+            background: white;
+            border: 1px solid var(--text-primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .slider-label {
+            position: absolute;
+            bottom: 2rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        .label-before { left: 2rem; }
+        .label-after { right: 2rem; }
     </style>
 </head>
 
@@ -265,6 +363,36 @@
                     <img src="projects/forum_boerhaave_assets/Winter_schaatsbaan.png" alt="Schaatsplein & Westgevel Winter">
                     <figcaption data-i18n="p1-cap-8">Schaatsplein & Westgevel - Winter</figcaption>
                 </figure>
+
+                <div class="gallery-item">
+                    <h3 style="margin: 4rem 0 2rem;" data-i18n="p1-slider-1-title">Draagstructuur vs. Inrichting</h3>
+                    <div class="comparison-slider" id="slider-1">
+                        <img class="img-base" src="projects/forum_boerhaave_assets/Restaurant_3.png" alt="Restaurant Interior">
+                        <div class="img-overlay">
+                            <div class="img-overlay-inner">
+                                <img src="projects/forum_boerhaave_assets/Draagstructuur.png" alt="Draagstructuur Structure">
+                            </div>
+                        </div>
+                        <div class="slider-handle"></div>
+                        <div class="slider-label label-before" data-i18n="p1-slider-before">Structuur</div>
+                        <div class="slider-label label-after" data-i18n="p1-slider-after">Interieur</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <h3 style="margin: 4rem 0 2rem;" data-i18n="p1-slider-2-title">Flexibiliteit: Presentatie vs. Sport</h3>
+                    <div class="comparison-slider" id="slider-2">
+                        <img class="img-base" src="projects/forum_boerhaave_assets/Multi-functionele_ruimte-sport.png" alt="Sport Function">
+                        <div class="img-overlay">
+                            <div class="img-overlay-inner">
+                                <img src="projects/forum_boerhaave_assets/Multi-functionele_ruimte-presentatie.png" alt="Presentation Function">
+                            </div>
+                        </div>
+                        <div class="slider-handle"></div>
+                        <div class="slider-label label-before" data-i18n="p1-slider-2-before">Presentatie</div>
+                        <div class="slider-label label-after" data-i18n="p1-slider-2-after">Sport</div>
+                    </div>
+                </div>
             </section>
 
             <nav class="back-nav">
